@@ -2,66 +2,38 @@
   <head>
     <title>Resume | Darpan Patel</title>
     <meta charset="UTF-8" />
-    <!--[if IE]> <![endif]-->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>Brittany Chiang | Web Developer &amp; UX Enthusiast</title>
-    <link
-      rel="shortcut icon"
-      href="http://brittanychiang.com/img/logo-black.png"
-      hreflang="en-us"
-    />
+    <title>Darpan Patel | Backend Engineer</title>
 
     <meta property="og:title" content="Resume | Darpan Patel" />
     <meta
       property="og:description"
-      content="Design-minded, detail oriented web developer passionate about combining beautiful code with beautiful design."
+      content="Backend engineer with 6+ years of experience in Java, Spring Boot, and distributed systems."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.brittanychiang.com/resume" />
     <meta property="og:site_name" content="Resume | Darpan Patel" />
-    <meta property="og:image" content="http://brittanychiang.com/img/og.png" />
-    <meta property="og:image:width" content="1280" />
-    <meta property="og:image:height" content="672" />
-    <meta property="og:image:type" content="image/png" />
     <meta property="og:locale" content="en_US" />
 
     <meta
       name="description"
-      content="Design-minded, detail oriented web developer passionate about combining beautiful code with beautiful design."
+      content="Backend engineer with 6+ years of experience in Java, Spring Boot, and distributed systems."
     />
     <meta
       name="keywords"
-      content="design, development, software, darpan, darpan31, patel, java, dalhousie"
-    />
-    <meta
-      name="google-site-verification"
-      content="DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk"
+      content="backend, software engineer, java, spring boot, kafka, darpan, patel, 8x8"
     />
 
     <meta itemprop="name" content="Resume | Darpan Patel" />
     <meta
       itemprop="description"
-      content="Design-minded, detail oriented software developer passionate about solving real-world problem."
+      content="Backend engineer with 6+ years of experience in Java, Spring Boot, and distributed systems."
     />
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:site" content="@bchiang7" />
-    <meta name="twitter:creator" content="@bchiang7" />
-    <meta name="twitter:title" content="Resume | Darpan Patel" />
-    <meta
-      name="twitter:description"
-      content="Design-minded, detail oriented web developer passionate about combining beautiful code with beautiful design."
-    />
-    <meta
-      name="twitter:image:src"
-      content="http://brittanychiang.com/img/og.png"
-    />
     <link
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i"
       rel="stylesheet"
@@ -78,187 +50,222 @@
   </head>
   <body>
     <div id="content"></div>
-    <script src="https://fb.me/react-0.14.6.js"></script>
-    <script src="https://fb.me/react-dom-0.14.6.js"></script>
-    <script src="https://unpkg.com/react@0.12.1/dist/JSXTransformer.js"></script>
-    <script type="text/jsx">
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
 
       var DATA = {
         name: "Hey, I'm Darpan",
-        subtext: "Software Developer/QA Engineer based in Halifax, NS",
-        jobStatus: "Graduate Student @ Dalhousie University",
-        twitterURL: 'https://twitter.com/Darpan48994673',
-        instaURL: 'https://www.instagram.com/darpan_31/',
+        subtext: "Backend Engineer based in Ottawa, Canada",
+        jobStatus: "Software Engineer 2 @ 8x8 Inc.",
         githubURL: 'https://github.com/Darpan313',
         linkedinURL: 'https://www.linkedin.com/in/patel-darpan/',
         resumeURL: 'img/Darpan Patel_resume.pdf'
       }
 
-      var App = React.createClass({
-        render: function() {
-          return(
-            <div className="app">
-              <Left
-                name={this.props.profileData.name}
-                subtext={this.props.profileData.subtext}
-                jobStatus={this.props.profileData.jobStatus}
-                twitterURL={this.props.profileData.twitterURL}
-                instaURL={this.props.profileData.instaURL}
-                githubURL={this.props.profileData.githubURL}
-                linkedinURL={this.props.profileData.linkedinURL}
-              />
-              <Right
-                intro={this.props.profileData.intro}
-                resumeURL={this.props.profileData.resumeURL}
-              />
-            </div>
-          );
-        }
-      });
+      function App(props) {
+        return(
+          <div className="app">
+            <Left
+              name={props.profileData.name}
+              subtext={props.profileData.subtext}
+              jobStatus={props.profileData.jobStatus}
+              githubURL={props.profileData.githubURL}
+              linkedinURL={props.profileData.linkedinURL}
+            />
+            <Right
+              resumeURL={props.profileData.resumeURL}
+            />
+          </div>
+        );
+      }
 
-      var Left = React.createClass({
-        render: function() {
-          return(
-            <div className="left">
-              <div className="bg-img"></div>
-              <div className="left-inner">
-                <div className="info">
-                  <h2 className="name">{this.props.name}</h2>
-                  <div className="subtext">{this.props.subtext}</div>
-                  <div className="jobStatus">{this.props.jobStatus}</div>
-                  <div className="social-links">
-                    <a href={this.props.twitterURL} target="_blank"><i className="fa fa-twitter"></i></a>
-                    <a href={this.props.instaURL} target="_blank"><i className="fa fa-instagram"></i></a>
-                    <a href={this.props.githubURL} target="_blank"><i className="fa fa-github"></i></a>
-                    <a href={this.props.linkedinURL}  target="_blank"><i className="fa fa-linkedin"></i></a>
-                  </div>
+      function Left(props) {
+        return(
+          <div className="left">
+            <div className="bg-img"></div>
+            <div className="left-inner">
+              <div className="info">
+                <h2 className="name">{props.name}</h2>
+                <div className="subtext">{props.subtext}</div>
+                <div className="jobStatus">{props.jobStatus}</div>
+                <div className="social-links">
+                  <a href={props.githubURL} target="_blank"><i className="fa fa-github"></i></a>
+                  <a href={props.linkedinURL} target="_blank"><i className="fa fa-linkedin"></i></a>
                 </div>
               </div>
             </div>
-          );
-        }
-      });
+          </div>
+        );
+      }
 
-      var Right = React.createClass({
-        render: function() {
-          return(
-            <div className="right">
-              <div className="right-inner">
-                <div className="introduction">
-                  <h4>Intro</h4>
-                  <div className="content">
-                    <p className="intro-p">I&#39;m currently working as Software Qulaity Assurance Intern(Co-op) at Proposify. I am in my final semester of Master of Applied Computer Science at Dalhousie University.</p>
-                    <p className="intro-p">I enjoy being the bridge between engineering and design, and feel right at home as a Software engineer. I&#39;m experienced in developing and designing products for the web, from simple landing pages to full-fledged web apps.</p>
-                    <span className="intro-p job-pls">I&#39;m currently looking for full-time/co-op as Software Developer(from January 2021).</span>
-                  </div>
+      function Right(props) {
+        return(
+          <div className="right">
+            <div className="right-inner">
+              <div className="introduction">
+                <h4>Intro</h4>
+                <div className="content">
+                  <p className="intro-p">Backend engineer with 6+ years of experience building efficient, maintainable systems that help teams ship features with confidence. Expertise in Java, Spring Boot, and distributed systems including Kafka and message queues.</p>
+                  <p className="intro-p">Proven track record of improving system performance, implementing resilience patterns, and delivering scalable cloud-based solutions. Currently working as Software Engineer 2 at 8x8 Inc. in Ottawa, Canada.</p>
                 </div>
-                <div className="skills">
-                  <h4>Skills</h4>
-                  <div className="content">
-                    <div className="skill-category">
-                      <strong>Languages: &nbsp;</strong>
-                      <span>Java, Python, JavaScript, HTML5, CSS3.</span>
-                    </div>
-                    <div className="skill-category">
-                      <strong>Libraries &amp; Frameworks: &nbsp;</strong>
-                      <span>Spring boot, jQuery, Bootstrap, D3.js, Node, MongoDB, MySQL, React, Pandas, PySpark, MatplotLib.</span>
-                    </div>
-                    <div className="skill-category">
-                      <strong>Tools: &nbsp;</strong>
-                      <span>JIRA, Git &amp; Github, AWS, Postman, Tableau, Power BI.</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="education">
-                  <h4>Education</h4>
-                  <div className="content">
-                    <div className="university"><a href="https://www.dal.ca/" target="_blank">Dalhousie University</a></div>
-                    <div className="college"><a href="https://www.dal.ca/faculty/computerscience.html" target="_blank">Faculty Of Computer Science</a></div>
-                    <div className="conc"><strong>Coursework:</strong> Adv. Software Development, Adv. Cloud Computing, Serverless Data Processing, Visualization, Data Management, Warehoursing and Analytics.</div>
-
-                    <div className="grad-date">Expected Graduation: January 2021</div>
-                  </div>
-                </div>
-                <div className="experience">
-                  <h4>Experience</h4>
-                  <div className="content">
-                    <div className="exp-item">
-                      <div className="job">
-                        <a className="company" href="http://www.proposify.com/" target="_blank">Proposify Inc</a>
-                        <div className="duration">Septempber &mdash; December 2020</div>
-                      </div>
-                      <div className="title">Software Quality Assurance Co-op</div>
-                      <ul className="description">
-                        <li>Handling <strong>“Bug Triage Process”</strong>.</li>
-                        <li>Communicating accross the department product team, development team, customer support team to find root cause of bug, documenting and evntually prioritizing for sprint.</li>
-                        <li>Writing Test cases, Test Plans & Test Scenarios.</li>
-                      </ul>
-                      <div className="tools"><strong>Tools & Technologies:</strong>Postman, JIRA, Agile Scrum methodologies.</div>
-                    </div>
-                    <div className="exp-item">
-                      <div className="job">
-                        <a className="company" href="http://www.itspe.co.in/" target="_blank">ITS Planners & Engineers Pvt. Ltd.</a>
-                        <div className="duration">January &mdash; June 2018</div>
-                      </div>
-                      <div className="title">Software Developer Co-op</div>
-                      <ul className="description">
-                        <li>Worked on <strong>“Red Light/Stop line violation detection system”</strong> project. Improved the system by creating a tool to capture and transfer evidence of violations at traffic signals. Build <strong>front-end</strong> and <strong>back-end</strong> for the system.</li>
-                        <li>Communicated with clients to gather requirements and specifications of project and showing demonstrations of working modules.</li>
-                        <li>Integrated hardware and software at client site and deployed web application on client’s server hosted in cloud.</li>
-                      </ul>
-                      <div className="tools"><strong>Tools & Technologies:</strong> Java, Servlet, PostgreSQL, Log4J 2, Junit, JavaScript, Git, FFmpeg library.</div>
-                    </div>
-
-                  </div>
-                </div>
-                <div className="projects">
-                  <h4>Projects</h4>
-                  <div className="content">
-                    <div className="project-item">
-                      <a className="project-title">Group Formation Tool</a>
-                      <ul className="description">
-                        <li>Developed web application in team of 4 members using Spring framework in Java, followed best practices and agile methodology to maintain quality of software using, Test Driven Development (TDD), CI/CD and added logging features using Log4j 2 library.</li>
-                        <li>Used design patterns to adapt for future changes and maintainability of software and peer reviewed codes. </li>
-                      </ul>
-                      <div className="tools"><strong>Tools & Technologies:</strong> Java, Servlet, PostgreSQL, Log4J 2, Junit, JavaScript, Git, FFmpeg library.</div>
-                    </div>
-                    <div className="project-item">
-                      <div className="project-title" href="https://darpan313.github.io/Global-Terrorism-Visualization/">Global Terrorism Visualisation</div>
-                      <ul className="description">
-                        <li>Build interactive visual analytics system for <strong>Geo-temporal visualizations</strong> of global terrorism on Global Terrorism Database (<a href="https://www.start.umd.edu/data-tools/global-terrorism-database-gtd">GTD</a>).</li>
-                        <li>Applied data cleansing techniques on huge database with 135 attributes and visualized insights using <strong>D3.js</strong>.</li>
-                      </ul>
-                      <div className="tools"><strong>Tools & Technologies:</strong> D3.js, HTML, CSS, Python libraries −Pandas, NumPy, Sublime.</div>
-                    </div>
-                    <div className="project-item">
-                      <div className="project-title">Database Design and Analysis of Dalhousie University</div>
-                      <ul className="description">
-                        <li>Created <strong>ETL</strong> pipeline for extraction of structured and unstructured data, transforming and structuring data to appropriate format, and loading it to database. Built database design for structured data. </li>
-                        <li>Showed insights using visualization tools like <strong>Tableau</strong>, <strong>Power BI</strong>.</li>
-                      </ul>
-                      <div className="tools"><strong>Tools & Technologies:</strong> Web Scraping(Beautiful Soup), Python, Pandas, Spark, Database design, MySQL, MongoDB, Tweepy & News API.</div>
-                    </div>
-                    <div className="project-item">
-                      <div className="project-title">Tourism App</div>
-                      <ul className="description">
-                        <li>Developed thin client Android and web application in team of 4 members and worked with AWS cloud services.</li>
-                        <li>Created microservices and deployed in multi container docker using AWS Elastic Beanstalk.</li>
-                      </ul>
-                      <div className="tools"><strong>Tools & Technologies:</strong> Python, jQuery, Android, Docker, Flask, AWS−Cognito, Elastic Beanstalk, Dynamo DB, S3, Load Balancing, Git.</div>
-                    </div>
-                  </div>
-                </div>
-                <a className="resume" href={this.props.resumeURL} target="_blank"><div className="resume-link">Grab a PDF of my full resume</div></a>
               </div>
+              <div className="skills">
+                <h4>Skills</h4>
+                <div className="content">
+                  <div className="skill-category">
+                    <strong>Languages:&nbsp;</strong>
+                    <span>Java (8, 17), SQL, Python</span>
+                  </div>
+                  <div className="skill-category">
+                    <strong>Frameworks &amp; Libraries:&nbsp;</strong>
+                    <span>Spring Boot, Spring Data JPA, Hibernate, JUnit, Mockito, Cucumber, Resilience4j</span>
+                  </div>
+                  <div className="skill-category">
+                    <strong>Databases &amp; Messaging:&nbsp;</strong>
+                    <span>PostgreSQL, MySQL, Kafka, ActiveMQ</span>
+                  </div>
+                  <div className="skill-category">
+                    <strong>Tools &amp; Platforms:&nbsp;</strong>
+                    <span>Maven, Git, Jenkins, GitHub Actions, Docker, Grafana, Linux</span>
+                  </div>
+                </div>
+              </div>
+              <div className="education">
+                <h4>Education</h4>
+                <div className="content">
+                  <div className="university"><a href="https://www.dal.ca/" target="_blank">Dalhousie University</a>, Halifax, Canada</div>
+                  <div className="college">Master of Applied Computer Science</div>
+                  <div className="grad-date">2019 &mdash; 2020</div>
+                  <br/>
+                  <div className="university"><a href="https://nirmauni.ac.in/" target="_blank">Nirma University</a>, Ahmedabad, India</div>
+                  <div className="college">Bachelor of Technology in Information Technology</div>
+                  <div className="grad-date">2014 &mdash; 2018</div>
+                </div>
+              </div>
+              <div className="experience">
+                <h4>Experience</h4>
+                <div className="content">
+                  <div className="exp-item">
+                    <div className="job">
+                      <a className="company" href="https://www.8x8.com/" target="_blank">8x8 Inc.</a>
+                      <div className="duration">July 2025 &mdash; Present</div>
+                    </div>
+                    <div className="title">Software Engineer 2</div>
+                    <ul className="description">
+                      <li>Continue leading development and optimization of enterprise audit and compliance services.</li>
+                    </ul>
+                  </div>
+                  <div className="exp-item">
+                    <div className="job">
+                      <a className="company" href="https://www.8x8.com/" target="_blank">8x8 Inc.</a>
+                      <div className="duration">July 2022 &mdash; June 2025</div>
+                    </div>
+                    <div className="title">Software Engineer 1</div>
+                    <ul className="description">
+                      <li>Architected and maintained <strong>Audit Service</strong> processing 1,000 RPS, tracking entity changes and user activity for compliance across all 8x8 services.</li>
+                      <li>Improved GET endpoint performance by <strong>3x+</strong> by migrating from MySQL to PostgreSQL with monthly table partitioning.</li>
+                      <li>Migrated messaging infrastructure from ActiveMQ to <strong>Kafka</strong>, significantly improving throughput for audit event creation.</li>
+                      <li>Designed fault-tolerant system with database fallback for Kafka outages, preventing audit data loss.</li>
+                      <li>Implemented scroll-based pagination for large data exports, eliminating expensive COUNT queries on public endpoints.</li>
+                      <li>Integrated <strong>Resilience4j</strong> circuit breakers for external API calls, improving system reliability.</li>
+                      <li>Created <strong>Grafana</strong> dashboards and alerts for metrics, logs, and traces across 7 team-owned services.</li>
+                    </ul>
+                  </div>
+                  <div className="exp-item">
+                    <div className="job">
+                      <a className="company" href="https://www.8x8.com/" target="_blank">Fuze (acquired by 8x8)</a>
+                      <div className="duration">May 2021 &mdash; June 2022</div>
+                    </div>
+                    <div className="title">Associate Software Engineer</div>
+                    <ul className="description">
+                      <li>Developed and maintained Java-based back office APIs for enterprise communication platform.</li>
+                      <li>Performed root cause analysis on production issues, implemented fixes with unit tests.</li>
+                      <li>Optimized REST endpoint performance by analyzing and refactoring MySQL queries.</li>
+                    </ul>
+                  </div>
+                  <div className="exp-item">
+                    <div className="job">
+                      <a className="company" href="http://www.proposify.com/" target="_blank">Proposify Inc.</a>
+                      <div className="duration">August 2020 &mdash; May 2021</div>
+                    </div>
+                    <div className="title">Software Quality Assurance Analyst</div>
+                    <ul className="description">
+                      <li>Led bug triage process, created test cases and test plans using TM4J in JIRA.</li>
+                      <li>Collaborated across Product, Customer Support, and Development teams in Agile Scrum environment.</li>
+                    </ul>
+                  </div>
+                  <div className="exp-item">
+                    <div className="job">
+                      <a className="company" href="http://www.itspe.co.in/" target="_blank">ITS Planners and Engineers (ITSPE)</a>
+                      <div className="duration">January 2018 &mdash; July 2018</div>
+                    </div>
+                    <div className="title">Software Developer Intern</div>
+                    <ul className="description">
+                      <li>Built Red Light Violation Detection System for Kakinada Smart City initiative.</li>
+                      <li>Developed UI for camera configuration and invoice generation; created backend scripts using FFmpeg to extract violation evidence from video streams.</li>
+                      <li>Served as client liaison: gathered requirements, led demonstrations, and deployed applications to cloud servers.</li>
+                    </ul>
+                    <div className="tools"><strong>Technologies:</strong> Java, Servlets, PostgreSQL, Log4J, JUnit, JavaScript, Git, FFmpeg</div>
+                  </div>
+                </div>
+              </div>
+              <div className="projects">
+                <h4>Projects</h4>
+                <div className="content">
+                  <div className="project-item">
+                    <a className="project-title">QuantPiper &mdash; AI-Powered Stock Analyzer</a>
+                    <ul className="description">
+                      <li>Built a full-stack AI-powered stock analysis platform that performs institutional-grade 9-layer analysis including price, fundamentals, earnings, insider activity, technicals, volume, news sentiment, macro environment, and AI-driven investment thesis.</li>
+                      <li>Developed backend with parallel async API calls using <strong>CompletableFuture</strong> and <strong>Virtual Threads</strong>, with smart caching and rate limiting for external API integration.</li>
+                      <li>Integrated <strong>Claude AI</strong> for generating structured investment recommendations with buy/sell signals, confidence levels, trade plans, and risk assessments.</li>
+                      <li>Implemented forward-test tracking to validate recommendation quality over time with win rate and P&amp;L tracking.</li>
+                    </ul>
+                    <div className="tools"><strong>Tools &amp; Technologies:</strong> Java 21, Spring Boot 3, Spring Data JPA, PostgreSQL, Flyway, React 18, Vite, Tailwind CSS, Recharts, Alpha Vantage API, Anthropic Claude API.</div>
+                  </div>
+                  <div className="project-item">
+                    <a className="project-title">Group Formation Tool</a>
+                    <ul className="description">
+                      <li>Developed web application in team of 4 members using Spring framework in Java, followed best practices and agile methodology to maintain quality of software using, Test Driven Development (TDD), CI/CD and added logging features using Log4j 2 library.</li>
+                      <li>Used design patterns to adapt for future changes and maintainability of software and peer reviewed codes.</li>
+                    </ul>
+                    <div className="tools"><strong>Tools &amp; Technologies:</strong> Java, Servlet, PostgreSQL, Log4J 2, Junit, JavaScript, Git, FFmpeg library.</div>
+                  </div>
+                  <div className="project-item">
+                    <a className="project-title" href="https://darpan313.github.io/Global-Terrorism-Visualization/" target="_blank">Global Terrorism Visualisation</a>
+                    <ul className="description">
+                      <li>Build interactive visual analytics system for <strong>Geo-temporal visualizations</strong> of global terrorism on Global Terrorism Database (GTD).</li>
+                      <li>Applied data cleansing techniques on huge database with 135 attributes and visualized insights using <strong>D3.js</strong>.</li>
+                    </ul>
+                    <div className="tools"><strong>Tools &amp; Technologies:</strong> D3.js, HTML, CSS, Python libraries - Pandas, NumPy, Sublime.</div>
+                  </div>
+                  <div className="project-item">
+                    <div className="project-title">Database Design and Analysis of Dalhousie University</div>
+                    <ul className="description">
+                      <li>Created <strong>ETL</strong> pipeline for extraction of structured and unstructured data, transforming and structuring data to appropriate format, and loading it to database. Built database design for structured data.</li>
+                      <li>Showed insights using visualization tools like <strong>Tableau</strong>, <strong>Power BI</strong>.</li>
+                    </ul>
+                    <div className="tools"><strong>Tools &amp; Technologies:</strong> Web Scraping (Beautiful Soup), Python, Pandas, Spark, Database design, MySQL, MongoDB, Tweepy &amp; News API.</div>
+                  </div>
+                  <div className="project-item">
+                    <div className="project-title">Tourism App</div>
+                    <ul className="description">
+                      <li>Developed thin client Android and web application in team of 4 members and worked with AWS cloud services.</li>
+                      <li>Created microservices and deployed in multi container docker using AWS Elastic Beanstalk.</li>
+                    </ul>
+                    <div className="tools"><strong>Tools &amp; Technologies:</strong> Python, jQuery, Android, Docker, Flask, AWS Cognito, Elastic Beanstalk, Dynamo DB, S3, Load Balancing, Git.</div>
+                  </div>
+                </div>
+              </div>
+              <a className="resume" href={props.resumeURL} target="_blank"><div className="resume-link">Grab a PDF of my full resume</div></a>
             </div>
-          );
-        }
-      });
+          </div>
+        );
+      }
 
-      ReactDOM.render(
-        <App profileData={DATA}/>,
-        document.getElementById('content')
-      );
+      const root = ReactDOM.createRoot(document.getElementById('content'));
+      root.render(<App profileData={DATA}/>);
     </script>
   </body>
 </html>
